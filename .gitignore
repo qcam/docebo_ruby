@@ -5,3 +5,6 @@ Gemfile.lock
 # Ingore Ruby version and gemset
 .ruby-version
 .ruby-gemset
+
+# Ignore gem
+*.gem

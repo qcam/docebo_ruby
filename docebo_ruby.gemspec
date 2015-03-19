@@ -4,7 +4,7 @@ $:.push(File.expand_path("../lib", __FILE__))
 require 'docebo_ruby/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'docebo_ruby'
+  s.name        = 'docebo'
   s.version     = DoceboRuby::VERSION
   s.date        = '2015-03-14'
   s.summary     = "Ruby wrapper for Docebo LMS."
