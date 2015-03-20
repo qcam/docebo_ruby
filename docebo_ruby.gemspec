@@ -17,5 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rest-client', '>= 1.7.3'
 
-  s.add_development_dependency 'rspec' , "~> 3.0.0"
+  s.add_development_dependency 'rspec', "~> 3.0.0"
+  s.add_development_dependency 'webmock'
 end

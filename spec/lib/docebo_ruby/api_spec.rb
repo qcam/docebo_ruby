@@ -1,5 +1,4 @@
-require 'rspec'
-require 'docebo_ruby'
+require 'spec_helper'
 
 describe DoceboRuby::API do
   let(:api) do
@@ -38,9 +37,18 @@ describe DoceboRuby::API do
   end
 
   describe '#send_request' do
+    before do
+      stub_request(:post, 'example.com')
+        .to_return(status: [200, 'OK'])
+      stub_request(:post, 'example.com/user/show')
+        .to_return(status: [200, 'OK'])
+      stub_request(:post, 'example.com/lorem/ipsum')
+        .to_return(status: [404, 'OK'])
+    end
+
     context 'if block given' do
       it 'yields the block' do
-        api.send_request('/', '/', {a: 1}) do |result|
+        api.send_request('user', 'show', {a: 1}) do |result|
           expect(result.code).to eq 200
         end
       end
@@ -48,7 +56,7 @@ describe DoceboRuby::API do
 
     context 'if block not given' do
       let(:result) do
-        api.send_request('/', '/', {a: 1})
+        api.send_request('user', 'show', {a: 1})
       end
 
       it 'returns result' do
@@ -59,7 +67,7 @@ describe DoceboRuby::API do
     context 'URL is not found' do
       it 'should raise NotFound error' do
         expect do 
-          api.send_request('a', 'b', {a: 1}) 
+          api.send_request('lorem', 'ipsum', {a: 1}) 
         end.to raise_error DoceboRuby::NotFound
       end
     end
