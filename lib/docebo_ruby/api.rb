@@ -8,24 +8,22 @@ module DoceboRuby
       @key = key
       @secret = secret
       @url = url
-      @params ||= {}
     end
 
-    def make_request(api, method, params)
+    def send_request(api, method, params, &block)
       raise ArgumentError.new('Please specify parameters') if params.nil?
       parameters = Parameters.new params
+      options = request_options parameters
+      url = rest_url api, method
 
-      options = {
-        :content_type => :json, 
-        :accept => :json, 
-        :headers => {
-          'X-Authorization' => code(parameters)
-        }
-      }
-
-      RestClient.post(path, options) do |response, request, result|
+      RestClient.post(url, options) do |response|
         case response.code
         when 200
+          if block_given?
+            yield response 
+          else
+            return response
+          end
         when 404
           raise NotFound.new(response)
         else
@@ -46,6 +44,16 @@ module DoceboRuby
     def code(parameters)
       codice = Digest::SHA1.hexdigest "#{parameters},#{@secret}"
       "Docebo #{@key}:#{codice}"
+    end
+
+    def request_options(parameters)
+      {
+        content_type: :json, 
+        accept: :json, 
+        headers: {
+          'X-Authorization' => code(parameters)
+        }
+      }
     end
   end
 end

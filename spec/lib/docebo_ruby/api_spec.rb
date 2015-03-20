@@ -36,4 +36,32 @@ describe DoceboRuby::API do
     end
 
   end
+
+  describe '#send_request' do
+    context 'if block given' do
+      it 'yields the block' do
+        api.send_request('/', '/', {a: 1}) do |result|
+          expect(result.code).to eq 200
+        end
+      end
+    end
+
+    context 'if block not given' do
+      let(:result) do
+        api.send_request('/', '/', {a: 1})
+      end
+
+      it 'returns result' do
+        expect(result.code).to eq 200
+      end
+    end
+
+    context 'URL is not found' do
+      it 'should raise NotFound error' do
+        expect do 
+          api.send_request('a', 'b', {a: 1}) 
+        end.to raise_error DoceboRuby::NotFound
+      end
+    end
+  end
 end
