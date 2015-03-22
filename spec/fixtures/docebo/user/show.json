@@ -1,0 +1,60 @@
+{
+"0": {
+"course_info": {
+"course_id": 1,
+"code": "",
+"course_name": "How to manage the ILT - Classroom APP",
+"course_description": "<p><span style=\"color: #333333; font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; line-height: 19px;\">The classroom APP allows you to use your Docebo platform to develop a training program that integrates E-Learning with traditional training. &amp;nbsp;Similar to E-Learning courses, the classroom courses have to be created in the users&amp;rsquo; area, but will have different settings.</span></p>",
+"status": "2",
+"selling": "0",
+"price": "0.00",
+"subscribe_method": "0",
+"course_edition": "0",
+"course_type": "elearning",
+"sub_start_date": null,
+"sub_end_date": null,
+"date_begin": "0000-00-00",
+"date_end": "0000-00-00",
+"course_link": "http://craft.docebosaas.com/lms/index.php?r=player/course&course_id=1"
+}
+},
+"1": {
+"course_info": {
+"course_id": 2,
+"code": "",
+"course_name": "How to manage the new Notification APP",
+"course_description": "<p><span style=\"color: #333333; font-family: Arial, sans-serif; line-height: 18px;\">In this course you will learn how to create automatic rules to notify your users about specific events. Discover how to mange the NEW notification App!<br /><br /></span></p>\r\n<div style=\"color: #333333; font-family: Arial, sans-serif; line-height: 18px;\"><br /><br /></div>",
+"status": "2",
+"selling": "0",
+"price": "0.00",
+"subscribe_method": "0",
+"course_edition": "0",
+"course_type": "elearning",
+"sub_start_date": "",
+"sub_end_date": "",
+"date_begin": "0000-00-00",
+"date_end": "0000-00-00",
+"course_link": "http://craft.docebosaas.com/lms/index.php?r=player/course&course_id=2"
+}
+},
+"2": {
+"course_info": {
+"course_id": 4,
+"code": "",
+"course_name": "etgfes",
+"course_description": "<p>dgds</p>",
+"status": "2",
+"selling": "0",
+"price": "",
+"subscribe_method": "2",
+"course_edition": "0",
+"course_type": "elearning",
+"sub_start_date": null,
+"sub_end_date": null,
+"date_begin": "0000-00-00",
+"date_end": "0000-00-00",
+"course_link": "http://craft.docebosaas.com/lms/index.php?r=player/course&course_id=4"
+}
+},
+"success": true
+}
