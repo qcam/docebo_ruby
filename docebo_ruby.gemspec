@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Jack A. Huang']
   s.email       = 'huynhquancam@gmail.com'
   s.files       = ['lib/docebo_ruby.rb']
-  s.homepage    = 'http://rubygems.org/gems/hola'
+  s.homepage    = 'https://github.com/huynhquancam/docebo_ruby'
   s.license     = 'MIT'
 
   s.add_dependency 'rest-client', '~> 1.7.3'
