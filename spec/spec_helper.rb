@@ -16,5 +16,17 @@ RSpec.configure do |config|
       )
     stub_request(:post, 'example.com/lorem/ipsum')
       .to_return(status: 404)
+    stub_request(:post, 'example.com/user/checkUsername')
+      .with(body: {userid: 'jahuang'})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/user/check_username/jahuang.json')
+      )
+    stub_request(:post, 'example.com/user/checkUsername')
+      .with(body: {userid: 'nouser'})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/user/check_username/nouser.json')
+      )
   end
 end

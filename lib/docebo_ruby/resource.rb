@@ -8,9 +8,10 @@ module DoceboRuby
       @api
     end
 
-    def self.fetch_data(method, &block)
+    def self.fetch_data(method, params = {}, &block)
       @fetcher = API.new
-      @fetcher.send_request(@api, 'listCourses', {}) do |result|
+      @fetcher.send_request(@api, method, params) do |result|
+        return result unless block_given?
         yield result
       end
     end
