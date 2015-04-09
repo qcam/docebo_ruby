@@ -37,9 +37,7 @@ module DoceboRuby
     protected
 
     def parse_response(raw_response)
-      response = JSON.parse(raw_response)
-      raise RequestError.new('Request Error') unless response['success']
-      response
+      JSON.parse(raw_response)
     end
 
     def rest_url(api, method)
