@@ -28,5 +28,11 @@ RSpec.configure do |config|
         status: 200,
         body: File.new('spec/fixtures/docebo/user/check_username/nouser.json')
       )
+    stub_request(:post, 'example.com/user/create')
+      .with(body: {userid: 'jahuang', firstname: 'Jack', lastname: 'Huang', email: 'jack@example.com'})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/user/create/success.json')
+      )
   end
 end

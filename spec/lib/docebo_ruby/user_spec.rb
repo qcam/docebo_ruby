@@ -16,4 +16,17 @@ describe DoceboRuby::Resource do
       end
     end
   end
+
+  describe '.create' do
+    it 'creates user at Docebo' do
+      expect( 
+        DoceboRuby::User.create(
+          userid: 'jahuang',
+          firstname: 'Jack',
+          lastname: 'Huang',
+          email: 'jack@example.com'
+        )
+      ).to be_truthy
+    end
+  end
 end

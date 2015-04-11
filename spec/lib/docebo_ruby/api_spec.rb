@@ -7,7 +7,7 @@ describe DoceboRuby::API do
 
   describe '#code' do
     let(:parameters) do
-      DoceboRuby::Parameters.new({test: '123', hello: 'world'})
+      DoceboRuby::Parameters.new({hello: '123', test: 'world'})
     end
     let(:code) { api.send(:code, parameters) }
 
