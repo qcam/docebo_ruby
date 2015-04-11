@@ -6,9 +6,9 @@ require 'base64'
 module DoceboRuby
   class API
     def initialize
-      @url = DoceboRuby::Configuration::URL
-      @key = DoceboRuby::Configuration::KEY
-      @secret = DoceboRuby::Configuration::SECRET
+      @url = DoceboRuby.config.api_url
+      @key = DoceboRuby.config.api_key
+      @secret = DoceboRuby.config.api_secret
     end
 
     def send_request(api, method, params, &block)
