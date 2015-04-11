@@ -11,9 +11,11 @@ Gem::Specification.new do |s|
   s.description = "Docebo is an online LMS."
   s.authors     = ['Jack A. Huang']
   s.email       = 'huynhquancam@gmail.com'
-  s.files       = ['lib/docebo_ruby.rb']
   s.homepage    = 'https://github.com/huynhquancam/docebo_ruby'
   s.license     = 'MIT'
+
+  s.files         = `git ls-files`.split("\n")
+  s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency 'rest-client', '~> 1.7.3'
 
