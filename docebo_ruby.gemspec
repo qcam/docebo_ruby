@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n")
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.require_paths    = ['lib']
 
   s.add_dependency 'rest-client', '~> 1.7.3'
 
