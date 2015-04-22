@@ -12,6 +12,12 @@ module DoceboRuby
       def check_username(username)
         fetch_data('checkUsername', {userid: username})['success']
       end
+
+      def authenticate(username, password)
+        fetch_data('authenticate', {password: password, username: username}) do |response|
+          response['id_user'] || false
+        end
+      end
     end
   end
 end

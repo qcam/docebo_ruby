@@ -29,4 +29,18 @@ describe DoceboRuby::Resource do
       ).to be_truthy
     end
   end
+
+  describe '.authenticate' do
+    context 'valid credentials' do
+      it 'authenticates user via Docebo API' do
+        expect(DoceboRuby::User.authenticate('jahuang', '123123123')).to eq '12345'
+      end
+    end
+
+    context 'invalid credentials' do
+      it 'returns false' do
+        expect(DoceboRuby::User.authenticate('jahuang', '111222333')).to be_falsey
+      end
+    end
+  end
 end

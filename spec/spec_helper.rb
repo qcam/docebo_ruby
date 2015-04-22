@@ -34,5 +34,17 @@ RSpec.configure do |config|
         status: 200,
         body: File.new('spec/fixtures/docebo/user/create/success.json')
       )
+    stub_request(:post, 'example.com/user/authenticate')
+      .with(body: {username: 'jahuang', password: '123123123'})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/user/authenticate/success.json')
+      )
+    stub_request(:post, 'example.com/user/authenticate')
+      .with(body: {username: 'jahuang', password: '111222333'})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/user/authenticate/failure.json')
+      )
   end
 end
