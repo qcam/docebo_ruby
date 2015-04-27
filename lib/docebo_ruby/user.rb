@@ -5,7 +5,7 @@ module DoceboRuby
     class << self
       def create(attributes = {})
         fetch_data('create', attributes) do |response|
-          response['success'] || response['idst']
+          response['idst'] || response['success']
         end
       end
 
