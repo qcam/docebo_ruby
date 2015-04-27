@@ -18,6 +18,13 @@ module DoceboRuby
           response['id_user'] || false
         end
       end
+
+      def sso_url(username)
+        timestamp = Time.now.to_i
+        token = Digest::MD5.hexdigest([username, timestamp, DoceboRuby.config.sso_token].join(','))
+
+        "http://#{DoceboRuby.config.sass_url}/docemolms/index.php?auth_regen=1&login_user=#{username}&time=#{timestamp}&token=#{token}"
+      end
     end
   end
 end
