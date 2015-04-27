@@ -4,9 +4,7 @@ module DoceboRuby
 
     class << self
       def create(attributes = {})
-        fetch_data('create', attributes) do |response|
-          response['idst'] || response['success']
-        end
+        fetch_data('create', attributes)
       end
 
       def check_username(username)
