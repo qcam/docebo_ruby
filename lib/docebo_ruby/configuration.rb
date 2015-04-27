@@ -17,7 +17,7 @@ module DoceboRuby
 
   class Configuration
     include ActiveSupport::Configurable
-    config_accessor :sass_url
+    config_accessor :saas_url
     config_accessor :api_url
     config_accessor :api_key
     config_accessor :api_secret
@@ -34,7 +34,7 @@ module DoceboRuby
   end
 
   configure do |config|
-    config.sass_url = 'example.com'
+    config.saas_url = 'example.com'
     config.api_url = 'example.com'
     config.api_key = 'TEST_KEY'
     config.api_secret = 'TEST_SECRET'
