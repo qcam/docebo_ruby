@@ -46,5 +46,11 @@ RSpec.configure do |config|
         status: 200,
         body: File.new('spec/fixtures/docebo/user/authenticate/failure.json')
       )
+    stub_request(:post, 'example.com/orgchart/createNode')
+      .with(body: {code: 'FirstNode123', translation: { english: 'First Node'}})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/orgchart/create_node/success.json')
+      )
   end
 end

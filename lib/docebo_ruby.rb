@@ -3,6 +3,7 @@ require 'docebo_ruby/api'
 require 'docebo_ruby/parameters'
 require 'docebo_ruby/resource'
 require 'docebo_ruby/course'
+require 'docebo_ruby/orgchart'
 require 'docebo_ruby/user'
 
 module DoceboRuby

@@ -1,7 +1,7 @@
 module DoceboRuby
   class Parameters
     def initialize(hash)
-      @hash = hash.sort.to_h
+      @hash = hash.to_h
     end
 
     def to_s

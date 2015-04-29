@@ -48,7 +48,10 @@ describe DoceboRuby::Resource do
   describe '.sso_url' do
     it 'generates SSO URL based on username' do
       expect(DoceboRuby::User.sso_url 'jack')
-        .to match /auth_regen=1&login_user=jack/
+        .to match /auth_regen=1/
+
+      expect(DoceboRuby::User.sso_url 'jack')
+        .to match /login_user=jack/
     end
   end
 end
