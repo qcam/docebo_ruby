@@ -10,11 +10,10 @@ gem install docebo
 or add it to Gemfile
 
 ```
-gem 'docebo', '~> 0.0.1'
+gem 'docebo', '~> 0.0.4'
 ```
 
 ### Usage
-
 
 ```ruby
 api = Docebo::API.new(
@@ -29,6 +28,17 @@ results = api.make_request(
   username: 'hello', 
   password: 'hell'
 )
+
+# Course
+DoceboRuby::Course.all
+
+# User
+DoceboRuby::User.authenticate('john', 'Pa$$W0rd')
+DoceboRuby::User.check_username('john')
+DoceboRuby::User.sso_url('john')
+
+# OrgChart
+DoceboRuby::Orgchart.create_node(attributes)
 ```
 
 ### TODO
