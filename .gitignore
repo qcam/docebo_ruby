@@ -8,3 +8,4 @@ Gemfile.lock
 
 # Ignore gem
 *.gem
+.idea

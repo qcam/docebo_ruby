@@ -8,7 +8,7 @@ describe DoceboRuby do
     end
 
     it 'joins hash values by comma' do
-      expect(parameters.to_s).to eq '2,1'
+      expect(parameters.to_s).to eq '1,2'
     end
   end
 end
