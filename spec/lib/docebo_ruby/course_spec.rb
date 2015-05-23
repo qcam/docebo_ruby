@@ -21,4 +21,12 @@ describe DoceboRuby::Course do
       expect(courses.sample.course_id).not_to be_nil
     end
   end
+
+  describe '.add_user_subscription' do
+    let(:result) { DoceboRuby::Course.add_user_subscription(10, 10) }
+
+    it 'subscribes user to the course' do
+      expect(result).to be_truthy
+    end
+  end
 end

@@ -52,5 +52,11 @@ RSpec.configure do |config|
         status: 200,
         body: File.new('spec/fixtures/docebo/orgchart/create_node/success.json')
       )
+    stub_request(:post, 'example.com/course/addUserSubscription')
+      .with(body: {course_id: '10', id_user: '10'})
+      .to_return(
+        status: 200,
+        body: File.new('spec/fixtures/docebo/course/add_user_subscription/success.json')
+      )
   end
 end
