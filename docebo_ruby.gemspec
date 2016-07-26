@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date        = '2015-03-14'
   s.summary     = "Ruby wrapper for Docebo LMS."
   s.description = "Docebo is an online LMS."
-  s.authors     = ['Jack A. Huang']
+  s.authors     = ['Cẩm Huỳnh']
   s.email       = 'huynhquancam@gmail.com'
   s.homepage    = 'https://github.com/huynhquancam/docebo_ruby'
   s.license     = 'MIT'
