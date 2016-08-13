@@ -12,7 +12,7 @@ describe DoceboRuby::API do
     let(:code) { api.send(:code, parameters) }
 
     it 'generates Docebo X-Authorization code' do
-      expect(code).to eq 'Docebo VEVTVF9LRVk6N2U5YzQ0ZjBhODU5NzgzN2UxNzE3ZTA1YzZiMGM4ZjZhMzIxNDY0Ng=='
+      expect(code).to eq 'Docebo dGhlLWtleTpkNWI5Mjc0ZGNiYzczOGZiNzdmMmZkYTk0ZTZlOThhZjBlZTczNTE4'
     end
   end
 

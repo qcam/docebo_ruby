@@ -7,12 +7,18 @@ require 'docebo_ruby/orgchart'
 require 'docebo_ruby/user'
 
 module DoceboRuby
-  if defined?(Rails)
-    require 'docebo_ruby/engine'
-  end
+  extend self
+
   class ArgumentError < Exception; end
   class NotFound < Exception; end
   class RequestError < Exception; end
+
+  def configure(&block)
+    yield config
+  end
+
+  # Global settings for DoceboRuby
+  def config
+    @config ||= DoceboRuby::Configuration.new
+  end
 end
-
-

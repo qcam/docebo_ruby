@@ -9,6 +9,11 @@ RSpec.configure do |config|
 
   # Stub API request
   config.before(:each) do
+    DoceboRuby.configure do |c|
+      c.api_key = 'the-key'
+      c.api_url = 'example.com'
+    end
+
     stub_request(:post, 'example.com/course/listCourses')
       .to_return(
         status: 200,
