@@ -1,7 +1,7 @@
-require 'rest_client'
-require 'json'
+require 'httparty'
 require 'digest/sha1'
 require 'base64'
+require 'docebo/response'
 
 module Docebo
   class API
@@ -11,41 +11,22 @@ module Docebo
       @secret = Docebo.config.api_secret
     end
 
-    def send_request(api, method, params, &block)
+    def send_request(api, method, params)
       raise ArgumentError.new('Please specify parameters') if params.nil?
       parameters = Parameters.new params
-      options = request_options parameters
-      url = rest_url api, method
+      url = "/#{api}/#{method}"
 
-      RestClient.post(url, params, options) do |raw_response|
-        case raw_response.code
-        when 200
-          response = parse_response raw_response
-          if block_given?
-            yield response
-          else
-            return response
-          end
-        when 404
-          raise NotFound.new(response)
-        else
-          raise RequestError.new(response)
-        end
-      end
+      Docebo::Response.new(
+        HTTParty.post(
+          url,
+          base_uri: @url,
+          body: params,
+          headers: _default_headers(parameters)
+        )
+      )
     end
 
     protected
-
-    def parse_response(raw_response)
-      JSON.parse(raw_response)
-    end
-
-    def rest_url(api, method)
-      if api == '' || method == ''
-        raise ArgumentError.new('You need to specify a module / method')
-      end
-      "#{@url}/#{api}/#{method}"
-    end
 
     def code(parameters)
       codice = Digest::SHA1.hexdigest "#{parameters.to_s},#{@secret}"
@@ -53,10 +34,9 @@ module Docebo
       "Docebo #{code}"
     end
 
-    def request_options(parameters)
+    def _default_headers(parameters)
       {
-        content_type: :json,
-        accept: :json,
+        'Accept' => 'application/json',
         'X-Authorization' => code(parameters)
       }
     end

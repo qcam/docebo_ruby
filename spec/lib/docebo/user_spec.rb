@@ -6,7 +6,8 @@ describe Docebo::Resource do
       it 'shows user existence as true' do
         VCR.use_cassette('legacy/user/checkUsername.success') do
           existence = Docebo::User.check_username('john')
-          expect(existence).to be_truthy
+          expect(existence).to be_ok
+          expect(existence.data['firstname']).to eq 'John'
         end
       end
     end
@@ -14,7 +15,10 @@ describe Docebo::Resource do
     context 'user not found' do
       it 'shows user existence as false' do
         VCR.use_cassette('legacy/user/checkUsername.failure') do
-          expect { Docebo::User.check_username('nouser') }.to raise_error(Docebo::RequestError)
+          result = Docebo::User.check_username('nouser')
+
+          expect(result).to be_error
+          expect(result.data['message']).to eq 'User not found'
         end
       end
     end
@@ -23,14 +27,15 @@ describe Docebo::Resource do
   describe '.create' do
     context 'valid params' do
       it 'creates user at Docebo' do
-        VCR.use_cassette('legacy/user/create') do
+        VCR.use_cassette('legacy/user/create.success') do
           result = Docebo::User.create\
                      userid: 'jahuang',
                      firstname: 'Jack',
                      lastname: 'Huang',
                      email: 'jack@example.com'
-          expect(result['idst']).to eq 13016
-          expect(result['success']).to be_truthy
+          expect(result).to be_ok
+          expect(result.data['idst']).to eq 13017
+          expect(result.data['success']).to be_truthy
         end
       end
     end
@@ -40,7 +45,9 @@ describe Docebo::Resource do
     context 'valid credentials' do
       it 'authenticates user via Docebo API' do
         VCR.use_cassette('legacy/user/authenticate') do
-          expect(Docebo::User.authenticate('john', '123123123')).to eq '13013'
+          result = Docebo::User.authenticate('john', '123123123')
+          expect(result).to be_ok
+          expect(result.data['success']).to be_truthy
         end
       end
     end
@@ -48,8 +55,7 @@ describe Docebo::Resource do
     context 'invalid credentials' do
       it 'returns false' do
         VCR.use_cassette('legacy/user/authenticate.failure') do
-          expect { Docebo::User.authenticate('noone', '111222333') }.
-            to raise_error(Docebo::RequestError)
+          expect(Docebo::User.authenticate('noone', '111222333')).to be_error
         end
       end
     end

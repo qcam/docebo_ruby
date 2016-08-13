@@ -10,11 +10,11 @@ describe Docebo::Orgchart do
       it 'creates node at docebo' do
         VCR.use_cassette('legacy/orgchart/createNode') do
           result = Docebo::Orgchart.create_node\
-                     code: 'A',
+                     code: '1',
                      translation: { english: 'the-a-node' }
 
-          expect(result['success']).to be_truthy
-          expect(result['id_org']).to eq '1'
+          expect(result.data['success']).to be_truthy
+          expect(result.data['id_org']).to eq '2'
         end
       end
     end

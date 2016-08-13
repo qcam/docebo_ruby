@@ -18,7 +18,7 @@ RSpec.configure do |config|
     Docebo.configure do |c|
       c.api_key = 'the-key'
       c.api_secret = 'the-secret'
-      c.api_url = 'hqc.docebosaas.com/api'
+      c.api_url = 'https://hqc.docebosaas.com/api'
     end
   end
 end

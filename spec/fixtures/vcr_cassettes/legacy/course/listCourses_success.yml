@@ -2,23 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: http://hqc.docebosaas.com/api/course/listCourses
+    uri: https://hqc.docebosaas.com/api/course/listCourses
     body:
-      encoding: ASCII-8BIT
+      encoding: US-ASCII
       string: ''
     headers:
       Accept:
       - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/x-www-form-urlencoded
       X-Authorization:
       - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOjVhMTI1NjAwYTM4ZjRkYjRkNjUwMTM5OGQxZWJhOTc5MjAxYzFiYzI=
-      Content-Length:
-      - '0'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -27,11 +19,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sat, 13 Aug 2016 10:11:21 GMT
+      - Sat, 13 Aug 2016 16:06:19 GMT
       Content-Type:
       - application/json; charset="UTF-8"
       Content-Length:
-      - '945'
+      - '947'
       Connection:
       - keep-alive
       X-Powered-By:
@@ -46,7 +38,7 @@ http_interactions:
       - 'true'
       Set-Cookie:
       - backend_eu_west_1_saas=1; path=/;
-      - docebo_session=do50pugjre1a0a92s9sv2sdh83; path=/; HttpOnly
+      - docebo_session=if3c9ev568np28esc241r1mrs6; path=/; secure; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
@@ -55,11 +47,12 @@ http_interactions:
       - no-cache
       Front-End-Https:
       - 'on'
+      - 'on'
     body:
       encoding: UTF-8
       string: '{"0":{"course_info":{"course_id":1,"code":"FIRST","course_name":"First
-        Course","course_description":"<p>This is the description for first course<\/p>","course_language":"english","status":2,"selling":0,"price":"","subscribe_method":2,"course_edition":0,"course_type":"elearning","sub_start_date":null,"sub_end_date":null,"date_begin":"0000-00-00","date_end":"0000-00-00","course_link":"http:\/\/hqc.docebosaas.com\/lms\/index.php?r=player\/course&course_id=1"}},"1":{"course_info":{"course_id":2,"code":"SECOND","course_name":"Second
-        Course","course_description":"<p>Just a long description for the second course<\/p>","course_language":"english","status":2,"selling":0,"price":"","subscribe_method":2,"course_edition":0,"course_type":"elearning","sub_start_date":null,"sub_end_date":null,"date_begin":"0000-00-00","date_end":"0000-00-00","course_link":"http:\/\/hqc.docebosaas.com\/lms\/index.php?r=player\/course&course_id=2"}},"success":true}'
+        Course","course_description":"<p>This is the description for first course<\/p>","course_language":"english","status":2,"selling":0,"price":"","subscribe_method":2,"course_edition":0,"course_type":"elearning","sub_start_date":null,"sub_end_date":null,"date_begin":"0000-00-00","date_end":"0000-00-00","course_link":"https:\/\/hqc.docebosaas.com\/lms\/index.php?r=player\/course&course_id=1"}},"1":{"course_info":{"course_id":2,"code":"SECOND","course_name":"Second
+        Course","course_description":"<p>Just a long description for the second course<\/p>","course_language":"english","status":2,"selling":0,"price":"","subscribe_method":2,"course_edition":0,"course_type":"elearning","sub_start_date":null,"sub_end_date":null,"date_begin":"0000-00-00","date_end":"0000-00-00","course_link":"https:\/\/hqc.docebosaas.com\/lms\/index.php?r=player\/course&course_id=2"}},"success":true}'
     http_version: 
-  recorded_at: Sat, 13 Aug 2016 10:11:21 GMT
+  recorded_at: Sat, 13 Aug 2016 16:06:12 GMT
 recorded_with: VCR 3.0.3

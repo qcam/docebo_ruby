@@ -2,36 +2,28 @@
 http_interactions:
 - request:
     method: post
-    uri: http://hqc.docebosaas.com/api/lorem/ipsum
+    uri: https://hqc.docebosaas.com/api/user/create
     body:
-      encoding: ASCII-8BIT
-      string: ''
+      encoding: UTF-8
+      string: userid=jahuang&firstname=Jack&lastname=Huang&email=jack%40example.com
     headers:
       Accept:
       - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/x-www-form-urlencoded
       X-Authorization:
-      - Docebo dGhlLWtleTpiNjNjNWZhYzhiNTE2ZDlkOTIxMzI4ODE2Y2JjYzU1MTFlYWJjNTk0
-      Content-Length:
-      - '0'
-      User-Agent:
-      - Ruby
+      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOmJmOTY3ZGRkZTliNTMxZDUwMzYxNzUxYzZkZGUxMjY5MTIyMjVlMGU=
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
       Server:
       - openresty
       Date:
-      - Sat, 13 Aug 2016 10:50:13 GMT
+      - Sat, 13 Aug 2016 15:54:21 GMT
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset="UTF-8"
       Content-Length:
-      - '0'
+      - '29'
       Connection:
       - keep-alive
       X-Powered-By:
@@ -45,16 +37,20 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Set-Cookie:
-      - docebo_session=be6ffsvr9p78jfvfsj522qabb7; path=/; HttpOnly
+      - backend_eu_west_1_saas=3; path=/;
+      - docebo_session=a8aj65m9kh5feg7hst37916kd2; path=/; secure; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
       Pragma:
       - no-cache
+      Front-End-Https:
+      - 'on'
+      - 'on'
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"idst":13017,"success":true}'
     http_version: 
-  recorded_at: Sat, 13 Aug 2016 10:50:07 GMT
+  recorded_at: Sat, 13 Aug 2016 15:54:14 GMT
 recorded_with: VCR 3.0.3

@@ -2,23 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: http://hqc.docebosaas.com/api/user/authenticate
+    uri: https://hqc.docebosaas.com/api/user/authenticate
     body:
-      encoding: US-ASCII
-      string: password=111222333&username=jahuang
+      encoding: UTF-8
+      string: password=111222333&username=noone
     headers:
       Accept:
       - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/x-www-form-urlencoded
       X-Authorization:
-      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOjcwZmQ5OGFkYmQ4MDk5YjI3NjI0ZjE2YzQ4ZWJmYTQyZWM3NTY5NDY=
-      Content-Length:
-      - '35'
-      User-Agent:
-      - Ruby
+      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOjQxZWJlMDNhODg0MjQ3NzZjOWJjMzZlMWZlOTY4M2E5YTA4ZDRhMTI=
   response:
     status:
       code: 201
@@ -27,7 +19,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sat, 13 Aug 2016 14:39:06 GMT
+      - Sat, 13 Aug 2016 15:55:45 GMT
       Content-Type:
       - application/json; charset="UTF-8"
       Content-Length:
@@ -45,8 +37,8 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Set-Cookie:
-      - backend_eu_west_1_saas=1; path=/;
-      - docebo_session=vh4mnth80pul543suap3fiobe1; path=/; HttpOnly
+      - backend_eu_west_1_saas=0; path=/;
+      - docebo_session=lehqm6jjbe7nstci4o5qf28is1; path=/; secure; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
@@ -55,9 +47,10 @@ http_interactions:
       - no-cache
       Front-End-Https:
       - 'on'
+      - 'on'
     body:
       encoding: UTF-8
       string: '{"success":false,"error":201,"message":"Invalid login data provided."}'
     http_version: 
-  recorded_at: Sat, 13 Aug 2016 14:39:06 GMT
+  recorded_at: Sat, 13 Aug 2016 15:55:39 GMT
 recorded_with: VCR 3.0.3

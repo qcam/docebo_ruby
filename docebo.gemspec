@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.require_paths    = ['lib']
 
-  s.add_dependency 'rest-client', '~> 1.7.3'
+  s.add_dependency 'httparty', '~> 0.14'
 
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'webmock', '~> 2.1'

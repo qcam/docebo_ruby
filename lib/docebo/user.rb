@@ -8,7 +8,7 @@ module Docebo
       end
 
       def check_username(username)
-        fetch_data('checkUsername', {userid: username})['success']
+        fetch_data('checkUsername', {userid: username})
       end
 
       def authenticate(username, password)

@@ -2,23 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: http://hqc.docebosaas.com/api/lorem/ipsum
+    uri: https://hqc.docebosaas.com/api/lorem/ipsum
     body:
-      encoding: ASCII-8BIT
+      encoding: US-ASCII
       string: ''
     headers:
       Accept:
       - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/x-www-form-urlencoded
       X-Authorization:
-      - Docebo dGhlLWtleTpiNjNjNWZhYzhiNTE2ZDlkOTIxMzI4ODE2Y2JjYzU1MTFlYWJjNTk0
-      Content-Length:
-      - '0'
-      User-Agent:
-      - Ruby
+      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOjVhMTI1NjAwYTM4ZjRkYjRkNjUwMTM5OGQxZWJhOTc5MjAxYzFiYzI=
   response:
     status:
       code: 500
@@ -27,7 +19,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sat, 13 Aug 2016 10:51:24 GMT
+      - Sat, 13 Aug 2016 15:56:19 GMT
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
@@ -45,7 +37,7 @@ http_interactions:
       Access-Control-Allow-Credentials:
       - 'true'
       Set-Cookie:
-      - docebo_session=r12g08qfrba7g3jpmevto0cpl6; path=/; HttpOnly
+      - docebo_session=d46apuu2uq1agqpkutqsf7vfs7; path=/; secure; HttpOnly
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
@@ -56,5 +48,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 13 Aug 2016 10:51:18 GMT
+  recorded_at: Sat, 13 Aug 2016 15:56:13 GMT
 recorded_with: VCR 3.0.3
