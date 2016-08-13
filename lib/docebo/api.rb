@@ -11,33 +11,23 @@ module Docebo
       @secret = Docebo.config.api_secret
     end
 
-    def send_request(api, method, params)
-      raise ArgumentError.new('Please specify parameters') if params.nil?
-      parameters = Parameters.new params
-      url = "/#{api}/#{method}"
-
+    def send_request(api, method, params = {})
       Docebo::Response.new(
         HTTParty.post(
-          url,
+          "/#{api}/#{method}",
           base_uri: @url,
           body: params,
-          headers: _default_headers(parameters)
+          headers: _default_headers(params)
         )
       )
     end
 
     protected
 
-    def code(parameters)
-      codice = Digest::SHA1.hexdigest "#{parameters.to_s},#{@secret}"
-      code = Base64.strict_encode64 "#{@key}:#{codice}"
-      "Docebo #{code}"
-    end
-
-    def _default_headers(parameters)
+    def _default_headers(params)
       {
         'Accept' => 'application/json',
-        'X-Authorization' => code(parameters)
+        'X-Authorization' => Docebo::Utils.code(@key, @secret, params)
       }
     end
   end

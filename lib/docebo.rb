@@ -15,9 +15,9 @@ module Docebo
   end
 end
 
+require 'docebo/utils'
 require 'docebo/configuration'
 require 'docebo/api'
-require 'docebo/parameters'
 require 'docebo/resource'
 require 'docebo/course'
 require 'docebo/orgchart'
