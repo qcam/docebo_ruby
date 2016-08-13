@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://hqc.docebosaas.com/api/user/authenticate
+    body:
+      encoding: US-ASCII
+      string: password=111222333&username=jahuang
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Authorization:
+      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOjcwZmQ5OGFkYmQ4MDk5YjI3NjI0ZjE2YzQ4ZWJmYTQyZWM3NTY5NDY=
+      Content-Length:
+      - '35'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Invalid login data provided.
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 Aug 2016 14:39:06 GMT
+      Content-Type:
+      - application/json; charset="UTF-8"
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.14
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,DELETE,POST, OPTIONS
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Set-Cookie:
+      - backend_eu_west_1_saas=1; path=/;
+      - docebo_session=vh4mnth80pul543suap3fiobe1; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Front-End-Https:
+      - 'on'
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"error":201,"message":"Invalid login data provided."}'
+    http_version: 
+  recorded_at: Sat, 13 Aug 2016 14:39:06 GMT
+recorded_with: VCR 3.0.3

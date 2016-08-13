@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://hqc.docebosaas.com/api/lorem/ipsum
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Authorization:
+      - Docebo dGhlLWtleTpiNjNjNWZhYzhiNTE2ZDlkOTIxMzI4ODE2Y2JjYzU1MTFlYWJjNTk0
+      Content-Length:
+      - '0'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 Aug 2016 10:51:24 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.14
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,DELETE,POST, OPTIONS
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Set-Cookie:
+      - docebo_session=r12g08qfrba7g3jpmevto0cpl6; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 13 Aug 2016 10:51:18 GMT
+recorded_with: VCR 3.0.3

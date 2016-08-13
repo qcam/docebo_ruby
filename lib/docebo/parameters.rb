@@ -5,7 +5,12 @@ module Docebo
     end
 
     def to_s
-      @hash.values.join(',')
+      @hash.values.map do |v|
+        case v
+        when Hash then Docebo::Parameters.new(v).to_s
+        else v
+        end
+      end.join(',')
     end
   end
 end

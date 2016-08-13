@@ -12,7 +12,7 @@ describe Docebo::API do
     let(:code) { api.send(:code, parameters) }
 
     it 'generates Docebo X-Authorization code' do
-      expect(code).to eq 'Docebo dGhlLWtleTpkNWI5Mjc0ZGNiYzczOGZiNzdmMmZkYTk0ZTZlOThhZjBlZTczNTE4'
+      expect(code).to eq 'Docebo dGhlLWtleTphMTAwOTg4ZTlmZGJiMmM1ODNmMjY2ZDcxMjdjMDMxZTRhOTZjZDRi'
     end
   end
 
@@ -22,7 +22,7 @@ describe Docebo::API do
     end
 
     it 'generates REST URL' do
-      expect(rest_url).to eq 'example.com/course/listCourses'
+      expect(rest_url).to eq 'hqc.docebosaas.com/api/course/listCourses'
     end
 
     context 'api or method is missing' do
@@ -40,27 +40,33 @@ describe Docebo::API do
   describe '#send_request' do
     context 'if block given' do
       it 'yields the block' do
-        api.send_request('course', 'listCourses', {}) do |result|
-          expect(result).to be
+        VCR.use_cassette('legacy/course/listCourses.success') do
+          api.send_request('course', 'listCourses', {}) do |result|
+            expect(result).to be_truthy
+          end
         end
       end
     end
 
     context 'if block not given' do
       let(:result) do
-        api.send_request('course', 'listCourses', {})
+        VCR.use_cassette('legacy/course/listCourses.success') do
+          api.send_request('course', 'listCourses', {})
+        end
       end
 
       it 'returns result' do
-        expect(result).to be
+        expect(result).to be_truthy
       end
     end
 
     context 'URL is not found' do
       it 'should raise NotFound error' do
-        expect do 
-          api.send_request('lorem', 'ipsum', {}) 
-        end.to raise_error Docebo::NotFound
+        expect do
+          VCR.use_cassette('legacy/500') do
+            api.send_request('lorem', 'ipsum', {})
+          end
+        end.to raise_error Docebo::RequestError
       end
     end
   end

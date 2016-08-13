@@ -6,14 +6,18 @@ describe Docebo::Course do
   end
 
   describe '.all' do
-    let!(:courses) { Docebo::Course.all }
+    let!(:courses) do
+      VCR.use_cassette('legacy/course/listCourses.success') do
+        Docebo::Course.all
+      end
+    end
 
     it 'fetches an array of courses' do
       expect(courses).to be_an Array
     end
 
     it 'fetches courses correctly' do
-      expect(courses.length).to eq 3
+      expect(courses.length).to eq 2
     end
 
     it 'wraps data using OpenStruct' do
@@ -23,7 +27,11 @@ describe Docebo::Course do
   end
 
   describe '.add_user_subscription' do
-    let(:result) { Docebo::Course.add_user_subscription(10, 10) }
+    let(:result) do
+      VCR.use_cassette('legacy/course/addUserSubscription.success') do
+        Docebo::Course.add_user_subscription(1, 1)
+      end
+    end
 
     it 'subscribes user to the course' do
       expect(result).to be_truthy

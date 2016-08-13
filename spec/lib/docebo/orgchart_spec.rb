@@ -8,12 +8,14 @@ describe Docebo::Orgchart do
   describe '.create' do
     context 'valid params' do
       it 'creates node at docebo' do
-        result = Docebo::Orgchart.create_node\
-                   code: 'FirstNode123',
-                   translation: { english: 'First Node' }
+        VCR.use_cassette('legacy/orgchart/createNode') do
+          result = Docebo::Orgchart.create_node\
+                     code: 'A',
+                     translation: { english: 'the-a-node' }
 
-        expect(result['success']).to be_truthy
-        expect(result['org_id']).to eq 123
+          expect(result['success']).to be_truthy
+          expect(result['id_org']).to eq '1'
+        end
       end
     end
   end

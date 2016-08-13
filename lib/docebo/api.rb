@@ -29,7 +29,6 @@ module Docebo
         when 404
           raise NotFound.new(response)
         else
-          Rails.logger.fatal(response.inspect) if Rails
           raise RequestError.new(response)
         end
       end

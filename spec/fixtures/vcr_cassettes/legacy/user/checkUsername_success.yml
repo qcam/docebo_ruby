@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://hqc.docebosaas.com/api/user/checkUsername
+    body:
+      encoding: US-ASCII
+      string: userid=john
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Authorization:
+      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOmNlNTViODE5M2U2ZDU4YWE2MGI5ZGRhYmVkMTAxM2MyZTBiMjNkMTQ=
+      Content-Length:
+      - '11'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 Aug 2016 14:33:47 GMT
+      Content-Type:
+      - application/json; charset="UTF-8"
+      Content-Length:
+      - '91'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.14
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,DELETE,POST, OPTIONS
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Set-Cookie:
+      - backend_eu_west_1_saas=0; path=/;
+      - docebo_session=pdurqks4o3bgfde7nb85h4vu34; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Front-End-Https:
+      - 'on'
+    body:
+      encoding: UTF-8
+      string: '{"idst":13013,"firstname":"John","lastname":"Johnson","email":"john@hqc.me","success":true}'
+    http_version: 
+  recorded_at: Sat, 13 Aug 2016 14:33:48 GMT
+recorded_with: VCR 3.0.3

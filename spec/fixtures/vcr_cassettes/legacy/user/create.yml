@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://hqc.docebosaas.com/api/user/create
+    body:
+      encoding: US-ASCII
+      string: userid=jahuang&firstname=Jack&lastname=Huang&email=jack%40example.com
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Authorization:
+      - Docebo UXBVb21NaWEqciphWHRYX3FWXypSI3gxOmJmOTY3ZGRkZTliNTMxZDUwMzYxNzUxYzZkZGUxMjY5MTIyMjVlMGU=
+      Content-Length:
+      - '69'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 Aug 2016 14:37:09 GMT
+      Content-Type:
+      - application/json; charset="UTF-8"
+      Content-Length:
+      - '29'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.14
+      Access-Control-Allow-Headers:
+      - Authorization, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,DELETE,POST, OPTIONS
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Set-Cookie:
+      - backend_eu_west_1_saas=3; path=/;
+      - docebo_session=fvrtpq8ibvg81b8ojnn4jfnv26; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Front-End-Https:
+      - 'on'
+    body:
+      encoding: UTF-8
+      string: '{"idst":13016,"success":true}'
+    http_version: 
+  recorded_at: Sat, 13 Aug 2016 14:37:10 GMT
+recorded_with: VCR 3.0.3
