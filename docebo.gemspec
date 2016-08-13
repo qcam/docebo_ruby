@@ -1,11 +1,11 @@
 $:.push(File.expand_path("../lib", __FILE__))
 
 # Maintain your gem's version:
-require 'docebo_ruby/version'
+require 'docebo/version'
 
 Gem::Specification.new do |s|
   s.name        = 'docebo'
-  s.version     = DoceboRuby::VERSION
+  s.version     = Docebo::VERSION
   s.date        = '2015-03-14'
   s.summary     = "Ruby wrapper for Docebo LMS."
   s.description = "Docebo is an online LMS."
@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rest-client', '~> 1.7.3'
 
-  s.add_development_dependency 'rspec', '~> 3.0.0'
-  s.add_development_dependency 'webmock'
+  s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'webmock', '~> 2.1'
 end

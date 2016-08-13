@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe DoceboRuby::API do
+describe Docebo::API do
   let(:api) do
-    DoceboRuby::API.new
+    Docebo::API.new
   end
 
   describe '#code' do
     let(:parameters) do
-      DoceboRuby::Parameters.new({hello: '123', test: 'world'})
+      Docebo::Parameters.new({hello: '123', test: 'world'})
     end
     let(:code) { api.send(:code, parameters) }
 
@@ -31,7 +31,7 @@ describe DoceboRuby::API do
       end
 
       it 'raises error if api or method is missing' do
-        expect { rest_url }.to raise_error(DoceboRuby::ArgumentError)
+        expect { rest_url }.to raise_error(Docebo::ArgumentError)
       end
     end
 
@@ -60,7 +60,7 @@ describe DoceboRuby::API do
       it 'should raise NotFound error' do
         expect do 
           api.send_request('lorem', 'ipsum', {}) 
-        end.to raise_error DoceboRuby::NotFound
+        end.to raise_error Docebo::NotFound
       end
     end
   end

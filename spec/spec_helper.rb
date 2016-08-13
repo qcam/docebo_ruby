@@ -2,14 +2,14 @@ require 'bundler/setup'
 Bundler.setup
 
 require 'rspec'
-require 'docebo_ruby'
+require 'docebo'
 require 'webmock/rspec'
 
 RSpec.configure do |config|
 
   # Stub API request
   config.before(:each) do
-    DoceboRuby.configure do |c|
+    Docebo.configure do |c|
       c.api_key = 'the-key'
       c.api_url = 'example.com'
     end

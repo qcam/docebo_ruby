@@ -3,12 +3,12 @@ require 'json'
 require 'digest/sha1'
 require 'base64'
 
-module DoceboRuby
+module Docebo
   class API
     def initialize
-      @url = DoceboRuby.config.api_url
-      @key = DoceboRuby.config.api_key
-      @secret = DoceboRuby.config.api_secret
+      @url = Docebo.config.api_url
+      @key = Docebo.config.api_key
+      @secret = Docebo.config.api_secret
     end
 
     def send_request(api, method, params, &block)
@@ -22,7 +22,7 @@ module DoceboRuby
         when 200
           response = parse_response raw_response
           if block_given?
-            yield response 
+            yield response
           else
             return response
           end
@@ -31,7 +31,7 @@ module DoceboRuby
         else
           Rails.logger.fatal(response.inspect) if Rails
           raise RequestError.new(response)
-        end        
+        end
       end
     end
 
@@ -43,7 +43,7 @@ module DoceboRuby
 
     def rest_url(api, method)
       if api == '' || method == ''
-        raise ArgumentError.new('You need to specify a module / method') 
+        raise ArgumentError.new('You need to specify a module / method')
       end
       "#{@url}/#{api}/#{method}"
     end
@@ -56,8 +56,8 @@ module DoceboRuby
 
     def request_options(parameters)
       {
-        content_type: :json, 
-        accept: :json, 
+        content_type: :json,
+        accept: :json,
         'X-Authorization' => code(parameters)
       }
     end

@@ -1,4 +1,4 @@
-module DoceboRuby
+module Docebo
   class Orgchart < Resource
     self.api = 'orgchart'
     class << self

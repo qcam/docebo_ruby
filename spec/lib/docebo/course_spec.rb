@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe DoceboRuby::Course do
+describe Docebo::Course do
   it 'wraps up Docebo LMS Course' do
-    expect(DoceboRuby::Course.api).to eq 'course'
+    expect(Docebo::Course.api).to eq 'course'
   end
 
   describe '.all' do
-    let!(:courses) { DoceboRuby::Course.all }
+    let!(:courses) { Docebo::Course.all }
 
     it 'fetches an array of courses' do
       expect(courses).to be_an Array
@@ -23,7 +23,7 @@ describe DoceboRuby::Course do
   end
 
   describe '.add_user_subscription' do
-    let(:result) { DoceboRuby::Course.add_user_subscription(10, 10) }
+    let(:result) { Docebo::Course.add_user_subscription(10, 10) }
 
     it 'subscribes user to the course' do
       expect(result).to be_truthy

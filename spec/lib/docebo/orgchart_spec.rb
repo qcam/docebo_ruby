@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe DoceboRuby::Orgchart do
+describe Docebo::Orgchart do
   it 'wraps up Docebo LMS Orgchart' do
-    expect(DoceboRuby::Orgchart.api).to eq 'orgchart'
+    expect(Docebo::Orgchart.api).to eq 'orgchart'
   end
 
   describe '.create' do
     context 'valid params' do
       it 'creates node at docebo' do
-        result = DoceboRuby::Orgchart.create_node\
+        result = Docebo::Orgchart.create_node\
                    code: 'FirstNode123',
                    translation: { english: 'First Node' }
 

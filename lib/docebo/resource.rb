@@ -1,4 +1,4 @@
-module DoceboRuby
+module Docebo
   class Resource < OpenStruct
     def self.api=(api)
       @api = api

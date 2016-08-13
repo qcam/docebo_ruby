@@ -1,4 +1,4 @@
-module DoceboRuby
+module Docebo
   class Course < Resource
     self.api = 'course'
 

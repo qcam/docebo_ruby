@@ -1,4 +1,4 @@
-module DoceboRuby
+module Docebo
   class Configuration
     attr_accessor :saas_url
     attr_accessor :api_url

@@ -1,4 +1,4 @@
-DoceboRuby - Ruby wrapper for Decobo LMS API
+Docebo - Ruby wrapper for Decobo LMS API
 ============================
 
 ### Installation
@@ -30,15 +30,15 @@ results = api.make_request(
 )
 
 # Course
-DoceboRuby::Course.all
+Docebo::Course.all
 
 # User
-DoceboRuby::User.authenticate('john', 'Pa$$W0rd')
-DoceboRuby::User.check_username('john')
-DoceboRuby::User.sso_url('john')
+Docebo::User.authenticate('john', 'Pa$$W0rd')
+Docebo::User.check_username('john')
+Docebo::User.sso_url('john')
 
 # OrgChart
-DoceboRuby::Orgchart.create_node(attributes)
+Docebo::Orgchart.create_node(attributes)
 ```
 
 ### TODO

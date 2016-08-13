@@ -1,4 +1,4 @@
-module DoceboRuby
+module Docebo
   class Parameters
     def initialize(hash)
       @hash = hash.to_h
